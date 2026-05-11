@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravi X Sensi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at top right,
+rgba(255,45,85,0.18),
+transparent 25%),
+
+radial-gradient(circle at bottom left,
+rgba(255,0,76,0.12),
+transparent 30%),
+
+linear-gradient(to bottom,#050505,#090909);
+
+z-index:-5;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+
+    /* Set a clean width for mobile */
+    width: 90%;
+    max-width: 400px; 
+    max-height: 85vh;
+    overflow-y: auto;
+
+padding: 20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-radius:30px;
+
+  background: rgba(15, 15, 15, 0.98);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.01);
+
+z-index:99999;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+}
+
+.logo span{
+color:#ff2d55;
+}
+
+.nav-links{
+display:flex;
+gap:10px;
+}
+
+.nav-links button{
+padding:10px 16px;
+
+border:none;
+border-radius:14px;
+
+background:transparent;
+
+color:white;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+.nav-links button:hover{
+background:rgba(255,255,255,0.08);
+}
+
+/* ================= SECTION ================= */
+
+.section{
+display:none;
+min-height:100vh;
+
+padding:120px 20px;
+}
+
+.active{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+width:100%;
+max-width:1200px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+gap:60px;
+
+flex-wrap:wrap;
+}
+
+.hero-left{
+flex:1;
+min-width:300px;
+}
+
+.tag{
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:100px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+font-size:13px;
+
+margin-bottom:25px;
+
+color:#ff7b96;
+}
+
+.hero-title{
+font-size:80px;
+font-weight:800;
+line-height:1;
+}
+
+.hero-title span{
+color:#ff2d55;
+}
+
+.hero-desc{
+margin-top:25px;
+
+font-size:18px;
+line-height:1.8;
+
+max-width:650px;
+
+color:#bdbdbd;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-top:35px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+padding:16px 28px;
+
+border:none;
+border-radius:18px;
+
+background:linear-gradient(135deg,#ff2d55,#ff004c);
+
+color:white;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+}
+
+.secondary-btn{
+padding:16px 28px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+color:white;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+}
+
+/* ================= PERFORMANCE CARD ================= */
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.performance-card{
+width:420px;
+
+padding:35px;
+
+border-radius:36px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+}
+
+.card-top{
+font-size:13px;
+letter-spacing:2px;
+color:#9f9f9f;
+margin-bottom:30px;
+}
+
+.fps-ring{
+width:220px;
+height:220px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+conic-gradient(
+#ff2d55 0deg,
+#ff004c 300deg,
+rgba(255,255,255,0.08) 300deg
+);
+
+padding:14px;
+}
+
+.fps-inner{
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+background:#0b0b0b;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.fps-inner h1{
+font-size:70px;
+color:#ff4d73;
+}
+
+.boost-box{
+margin-top:30px;
+}
+
+.boost-label{
+display:flex;
+justify-content:space-between;
+
+margin-bottom:12px;
+
+font-size:14px;
+}
+
+.bar{
+height:14px;
+
+background:#1b1b1b;
+
+border-radius:100px;
+
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+width:92%;
+
+background:linear-gradient(to right,#ff2d55,#ff004c);
+
+border-radius:100px;
+}
+
+.badges{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+
+margin-top:25px;
+}
+
+.badges span{
+padding:10px 15px;
+
+border-radius:100px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+font-size:13px;
+}
+
+/* ================= PRICES ================= */
+
+.price-wrapper{
+width:100%;
+max-width:1300px;
+}
+
+.section-title{
+font-size:55px;
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:24px;
+}
+
+.card{
+padding:30px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:14px;
+}
+
+.price{
+font-size:34px;
+font-weight:700;
+
+color:#ff5c7c;
+
+margin-bottom:14px;
+}
+
+.card p{
+font-size:14px;
+line-height:1.8;
+color:#c3c3c3;
+}
+
+.card button{
+margin-top:24px;
+
+width:100%;
+
+padding:15px;
+
+border:none;
+border-radius:18px;
+
+background:linear-gradient(135deg,#ff2d55,#ff004c);
+
+color:white;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+width:100%;
+max-width:700px;
+
+padding:50px 25px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+text-align:center;
+}
+
+.contact-box p{
+margin-top:20px;
+
+font-size:18px;
+line-height:1.8;
+
+color:#c7c7c7;
+}
+
+.whatsapp-btn{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+margin-top:35px;
+
+padding:18px 30px;
+
+border-radius:18px;
+
+background:#25D366;
+
+color:white;
+
+font-weight:600;
+
+text-decoration:none;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,0.75);
+
+backdrop-filter:blur(6px);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:9998;
+}
+
+.overlay.active{
+opacity:1;
+pointer-events:auto;
+}
+
+/* ================= FIXED PAYMENT POPUP ================= */
+
+/* 1. The Main Popup Container */
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+
+width:min(95vw,550px);
+
+/* IMPORTANT FIX */
+
+max-height:90vh;
+
+overflow-y:auto;
+
+padding:25px;
+
+border-radius:35px;
+
+background:rgba(18,18,18,0.96);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+z-index:99999;
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+}
+
+.popup.active{
+opacity:1;
+pointer-events:auto;
+
+transform:translate(-50%,-50%) scale(1);
+}
+
+/* SCROLLBAR */
+
+.popup::-webkit-scrollbar{
+width:4px;
+}
+
+.popup::-webkit-scrollbar-thumb{
+background:#ff2d55;
+border-radius:20px;
+}
+
+/* TITLE */
+
+.popup-title{
+font-size:38px;
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:25px;
+}
+
+.popup-title span{
+color:#ff2d55;
+}
+
+/* PAYMENT BOX */
+
+/* 1. Ensure the cards take full width and stack correctly */
+
+/* 2. The Payment Method Bars (Smaller & Centered) */
+.payment-card {
+    width: 100%; /* Spans the width of the popup */
+    padding: 15px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 12px;
+}
+
+padding:24px;
+
+border-radius:26px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+margin-bottom:18px;
+}
+
+/* 3. Text Sizes (Making it fit beautifully) */
+.payment-card h3 {
+    font-size: 16px;
+    color: #ff2d55;
+    margin-bottom: 5px;
+}
+
+/* DETAILS */
+
+
+/* 2. Fix the text alignment so it never squashes */
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.detail:last-child {
+    border-bottom: none;
+}
+
+.label {
+font-size: 11px;
+color: #888;
+text-transform: uppercase; 
+letter-spacing: 1px; 
+margin-bottom: 2px; 
+}
+
+/* 3. Make the values (Account #, Name) easy to read on any screen */
+.value {
+    font-size: 17px; /* Slightly smaller for mobile compatibility */
+    font-weight: 700;
+    color: #fff;
+    word-wrap: break-word; /* Force long names to wrap instead of pushing the box */
+    width: 100%;
+}
+
+/* PACKAGE */
+
+.package-box {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    margin: 10px 0;
+    border-radius: 15px;
+}
+
+border-radius:20px;
+
+background:rgba(255,45,85,0.08);
+
+border:1px solid rgba(255,45,85,0.2);
+
+text-align:center;
+
+font-size:17px;
+font-weight:600;
+
+color:#ff8ca3;
+
+margin-top:10px;
+}
+
+/* BUTTONS */
+
+.popup-buttons{
+display:flex;
+flex-direction:column;
+gap:8px;
+
+margin-top:24px;
+}
+
+.receipt-btn{
+width:100%;
+
+padding:18px;
+
+border:none;
+border-radius:18px;
+
+background:#25D366;
+
+color:white;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+}
+
+.close-btn{
+width:100%;
+
+padding:16px;
+
+border:none;
+border-radius:18px;
+
+background:rgba(255,255,255,0.08);
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+padding:30px;
+
+text-align:center;
+
+color:#888;
+}
+
+/* ================= MOBILE FIX ================= */
+
+
+/* 4. Universal Mobile Fix for the Popup */
+@media (max-width: 480px) {
+    .popup {
+        width: 92vw;
+        padding: 15px;
+        max-height: 85vh; /* Prevents it from going off-screen */
+    }
+    
+    
+    .popup-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .payment-card h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+.hero{
+justify-content:center;
+text-align:center;
+}
+
+.hero-title{
+font-size:55px;
+}
+
+.hero-desc{
+font-size:16px;
+margin:auto;
+margin-top:20px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.performance-card{
+width:100%;
+max-width:420px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+/* PAYMENT FIX */
+
+.popup{
+width:95vw;
+
+padding:18px;
+
+max-height:88vh;
+
+border-radius:28px;
+}
+
+.popup-title{
+font-size:28px;
+}
+
+.payment-card{
+padding:18px;
+}
+
+.value{
+font-size:18px;
+}
+
+.receipt-btn,
+.close-btn{
+padding:15px;
+font-size:14px;
+}
+
+nav{
+padding:14px 16px;
+}
+
+.logo{
+font-size:18px;
+}
+
+.nav-links button{
+padding:9px 12px;
+font-size:13px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+Ravi X <span>Sensi</span>
+</div>
+
+<div class="nav-links">
+
+<button onclick="showTab('home')">Home</button>
+<button onclick="showTab('prices')">Prices</button>
+<button onclick="showTab('contact')">Contact</button>
+
+</div>
+
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="section active">
+
+<div class="hero">
+
+<div class="hero-left">
+
+<div class="tag">
+⚡ Premium Gaming Optimization
+</div>
+
+<h1 class="hero-title">
+Ravi X <span>Sensi</span>
+</h1>
+
+<p class="hero-desc">
+Experience ultra smooth gameplay, stable FPS,
+faster touch response and premium Free Fire performance
+with professional optimization & regedit services.
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn"
+onclick="showTab('prices')">
+
+View Packages
+
+</button>
+
+<button class="secondary-btn"
+onclick="showTab('contact')">
+
+Contact Us
+
+</button>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="hero-right">
+
+<div class="performance-card">
+
+<div class="card-top">
+PERFORMANCE STATUS
+</div>
+
+<div class="fps-ring">
+
+<div class="fps-inner">
+
+<h1>90</h1>
+<span>FPS</span>
+
+</div>
+
+</div>
+
+<div class="boost-box">
+
+<div class="boost-label">
+
+<span>Performance Boost</span>
+<span>95%</span>
+
+</div>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+</div>
+
+<div class="badges">
+
+<span>🔥 No Lag</span>
+<span>⚡ Fast Touch</span>
+<span>🎯 Stable FPS</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICES -->
+
+<section id="prices" class="section">
+
+<div class="price-wrapper">
+
+<h1 class="section-title">
+Pricing Packages
+</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>Optimize</h3>
+<div class="price">Rs. 2,500</div>
+<p>Smooth gameplay optimization with improved FPS and reduced lag.</p>
+<button onclick="buy('Optimize')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Optimize + Reg</h3>
+<div class="price">Rs. 3,000</div>
+<p>Advanced optimization with premium regedit tuning.</p>
+<button onclick="buy('Optimize + Reg')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Combo Pack</h3>
+<div class="price">Rs. 4,000</div>
+<p>Balanced gaming performance and touch response boost.</p>
+<button onclick="buy('Combo Pack')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Special Pack</h3>
+<div class="price">Rs. 4,500</div>
+<p>High-end optimization package for competitive gameplay.</p>
+<button onclick="buy('Special Pack')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>VIP Pack</h3>
+<div class="price">Rs. 5,000</div>
+<p>Professional tuning for ultra smooth gaming experience.</p>
+<button onclick="buy('VIP Pack')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Premium Pack</h3>
+<div class="price">Rs. 6,000</div>
+<p>Maximum performance optimization with premium settings.</p>
+<button onclick="buy('Premium Pack')">Buy Now</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<div class="contact-box">
+
+<h1 class="section-title">
+Contact Us
+</h1>
+
+<p>
+Need support or want to place an order?<br>
+Contact us directly on WhatsApp.
+</p>
+
+<a
+class="whatsapp-btn"
+href="https://wa.me/94724211799"
+target="_blank">
+
+💬 WhatsApp Chat
+
+</a>
+
+</div>
+
+</section>
+
+<!-- PAYMENT POPUP -->
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+
+<h1 class="popup-title">
+Payment <span>Details</span>
+</h1>
+
+<!-- BANK -->
+
+<div class="payment-card">
+
+<h3>🏦 Bank Details</h3>
+
+<div class="detail">
+<div class="label">Account Number</div>
+<div class="value">88024039</div>
+</div>
+
+<div class="detail">
+<div class="label">Account Name</div>
+<div class="value">K H N RANASINGHE</div>
+</div>
+
+<div class="detail">
+<div class="label">Bank Name</div>
+<div class="value">BOC BANK</div>
+</div>
+
+</div>
+
+<!-- EZ CASH -->
+
+<div class="payment-card">
+
+<h3>📱 Ez Cash</h3>
+
+<div class="detail">
+<div class="label">Number</div>
+<div class="value">0741553137</div>
+</div>
+
+</div>
+
+<!-- PACKAGE -->
+
+<div class="package-box" id="packageName">
+Package : Optimize
+</div>
+
+<!-- BUTTONS -->
+
+<div class="popup-buttons">
+
+<button class="receipt-btn"
+onclick="sendReceipt()">
+
+📤 Send Receipt in WhatsApp
+
+</button>
+
+<button class="close-btn"
+onclick="closePopup()">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© Ravi X Sensi | All Rights Reserved
+</footer>
+
+<script>
+
+let selectedPackage = '';
+
+function showTab(tab){
+
+document.querySelectorAll('.section')
+.forEach(sec=>{
+sec.classList.remove('active');
+});
+
+document.getElementById(tab)
+.classList.add('active');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+function buy(pkg){
+
+selectedPackage = pkg;
+
+document.getElementById('packageName')
+.innerHTML = "Package : " + pkg;
+
+document.getElementById('popup')
+.classList.add('active');
+
+document.getElementById('overlay')
+.classList.add('active');
+
+}
+
+function closePopup(){
+
+document.getElementById('popup')
+.classList.remove('active');
+
+document.getElementById('overlay')
+.classList.remove('active');
+
+}
+
+function sendReceipt(){
+
+let msg =
+"Hello Ravi X Sensi,%0A%0AI have completed the payment for : "
++ selectedPackage +
+"%0A%0AI will send the payment receipt now.";
+
+window.open(
+"https://wa.me/94724211799?text=" + msg,
+'_blank'
+);
+
+}
+
+document.getElementById('overlay')
+.addEventListener('click',closePopup);
+
+</script>
+
+</body>
+</html>
